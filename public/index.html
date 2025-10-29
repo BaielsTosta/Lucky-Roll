@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/app.js"></script>
     <!--Detalhes do Site-->
     <title>Lucky Roll</title>
     <meta name="description" content="Lucky Roll - Rolador de dados para RPG" />
@@ -27,8 +28,56 @@
     <meta name="twitter:creator" content="@spiegelock" />
   </head>
   <body>
-    <section></section>
-    <section></section>
-    <footer></footer>
+    <!--Header do Site-->
+    <header id="lucky-roll-header">
+      <!--Logo do Site-->
+      <img src="" alt="lucky-roll-logo" id="lucky-roll-logo" />
+    </header>
+    <!--Seção do Formulário de Rolagem-->
+    <section id="dice-roller">
+      <!--Formulário com as opções de rolagem-->
+      <form action="" id="dice-form" method="get" target="_self">
+        <fieldset id="dice-selection">
+          <legend>Selecione os dados que você deseja rodar</legend>
+          <!--Quantidade de dados para selecionar-->
+          <label for="dice-quantity">Quantidade de Dados: </label>
+          <input
+            type="number"
+            id="dice-quantity"
+            min="1"
+            max="10"
+            placeholder="1"
+          />
+          <!--Selecionar o tipo de dado-->
+          <select name="dice-type" id="dice-type">
+            <option value="d2">D2</option>
+            <option value="d4">D4</option>
+            <option value="d6">D6</option>
+            <option value="d8">D8</option>
+            <option value="d10">D10</option>
+            <option value="d12">D12</option>
+            <option value="d20">D20</option>
+          </select>
+          <!--Botão para adicionar outro dado-->
+          <input
+            type="button"
+            id="add-dices"
+            name="add-dices"
+            onclick="addDices()"
+            value="+"
+          />
+          <!--Botão para rolar os dados-->
+          <input
+            type="button"
+            id="roll-dices"
+            name="roll-dices"
+            onClick="rollDices()"
+            value="Rolar os Dados"
+          />
+        </fieldset>
+      </form>
+    </section>
+    <section id="roll-log"></section>
+    <!--<footer id="lucky-roll-footer"></footer>-->
   </body>
 </html>

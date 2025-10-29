@@ -1,0 +1,3 @@
+function addDices() {}
+
+function rollDices() {}
