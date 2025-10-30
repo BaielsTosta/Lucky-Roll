@@ -12,6 +12,31 @@ function addDices() {
 }
 
 function rollDices() {
-  let contagem = document.querySelectorAll(".dice-information").length;
-  window.alert(contagem);
+  let quantidadeDeDados = parseInt(
+    document.querySelector(".dice-quantity-input").value
+  );
+
+  let dadoSelecionado = document.querySelector(".dice-type-selector").value;
+
+  dadoSelecionado =
+    dadoSelecionado == "d2"
+      ? 2
+      : dadoSelecionado == "d4"
+      ? 4
+      : dadoSelecionado == "d6"
+      ? 6
+      : dadoSelecionado == "d8"
+      ? 8
+      : dadoSelecionado == "d10"
+      ? 10
+      : dadoSelecionado == "d12"
+      ? 12
+      : 20;
+
+  for (let i = 0; i < quantidadeDeDados; i++) {
+    let resultado = Math.floor(Math.random() * dadoSelecionado) + 1;
+    window.alert(resultado);
+  }
+
+  window.alert(resultado);
 }
