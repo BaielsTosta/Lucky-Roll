@@ -2,3 +2,8 @@
 .dice-information {
   display: block;
 }
+
+#rolgemAtual {
+  background-color: red;
+  border: 1 rgb(0, 0, 0);
+}
