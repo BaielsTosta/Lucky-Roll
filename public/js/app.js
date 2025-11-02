@@ -39,11 +39,36 @@ function rollDices() {
       ? 12
       : 20;
 
+  function singleRolls() {
+    let roll_saver = [];
+    // Faz o loop com as rolagens de dado
+    for (let loop = 0; loop < quantidade_de_dados; loop++) {
+      // Cálculo da Rolagem
+      let resultado = Math.floor(Math.random() * dado_selecionado) + 1;
+      roll_saver.push(resultado);
+    }
+    return roll_saver;
+  }
+
   // Seleção do Container onde ficarão os registros de rolagem
   let container_roll_log = document.querySelector("#roll-log");
 
+  // Criação do Container que vai armazenar a Rolagem
+  let container_rolagens = document.createElement("div");
+  container_rolagens.className = "roll-result";
+
+  // Criação do Elemento de Texto onde nossas Rolagens vão aparecer
+  let text_roll = document.createElement("p");
+  text_roll.textContent = `Resultados das Rolagens do D${dado_selecionado}: [${singleRolls()}]`;
+
+  // Adiciona o texto ao container da rolagem
+  container_rolagens.appendChild(text_roll);
+
+  // Adiciona o container ao log de rolagens
+  container_roll_log.appendChild(container_rolagens);
+
   // Faz o loop com as rolagens de dado
-  for (let loop = 0; loop < quantidade_de_dados; loop++) {
+  /*for (let loop = 0; loop < quantidade_de_dados; loop++) {
     // Cálculo da Rolagem
     let resultado = Math.floor(Math.random() * dado_selecionado) + 1;
 
@@ -62,5 +87,8 @@ function rollDices() {
 
     // Adiciona o container ao log de rolagens
     container_roll_log.appendChild(container_rolagens);
-  }
+  }*/
+
+  // Chama a Função de Interpretar os Rolls
+  //window.alert(singleRolls());
 }
