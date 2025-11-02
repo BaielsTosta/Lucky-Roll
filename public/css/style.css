@@ -1,20 +1,42 @@
+/* Corpo */
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   font-weight: bold;
+  font-family: sans-serif;
 }
 
-#roll-dices,
-.dice-information {
-  display: block;
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.roll-result {
-  margin: 0 0 1rem 0;
-  padding: 0;
-  background-color: rgb(185, 185, 185);
-  color: rgb(0, 0, 0);
-  border: 3px solid black;
+/* Header */
+#lucky-roll-header {
+}
+
+/* Container com Rolagem */
+#dice-roller-container {
+  flex: 0 0 70%;
   box-sizing: border-box;
+  padding: 0 1%;
+}
+
+/* Histórico de Rolagem */
+#roll-log {
+  flex: 0 0 30%;
+  box-sizing: border-box;
+  margin: 0 1%;
+  border: 1px solid black;
+  height: 80dvh;
+  overflow-y: auto;
+  flex-wrap: nowrap;
+}
+
+/* Logo do Lucky Roll */
+#lucky-roll-logo {
+  display: flex;
+  width: 10%;
+  justify-self: center;
 }
