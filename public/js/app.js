@@ -1,5 +1,17 @@
 // Função para adicionar Dados
-function addDices() {}
+function addDices() {
+  // Seleção do Container onde estão as Opções de Rolagem
+  let container_dice_selection = document.querySelector("#dice-selection");
+
+  // Seleção das opções do dado
+  let div_dice_options = document.querySelector(".dice-information");
+
+  // Clonando a div
+  let cloned_dice_div = div_dice_options.cloneNode(true);
+
+  // Colocando a div duplicada no final do container de seleção de dados
+  container_dice_selection.appendChild(cloned_dice_div);
+}
 
 // Função para rolar os Dados
 function rollDices() {
