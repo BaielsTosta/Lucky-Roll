@@ -1,9 +1,20 @@
+.open-sans-<uniquifier > {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
 /* Corpo */
 body {
   margin: 0;
   padding: 0;
   font-weight: bold;
-  font-family: sans-serif;
+  font-family: "Open Sans";
+  font-weight: 100;
+  background-color: #0d6340;
+  overflow-x: hidden;
 }
 
 main {
@@ -12,31 +23,187 @@ main {
   justify-content: space-between;
 }
 
-/* Header */
-#lucky-roll-header {
-}
-
-/* Container com Rolagem */
-#dice-roller-container {
+/* Layout das sections principais */
+section#dice-roller-container {
   flex: 0 0 70%;
+  width: 100%;
+  min-width: 0;
+  margin: 2rem 1.5rem 2rem 2rem;
+  padding: 2rem 2rem 2rem 2rem;
   box-sizing: border-box;
-  padding: 0 1%;
+  border-radius: 16px;
+}
 }
 
-/* Histórico de Rolagem */
-#roll-log {
+section#roll-log {
   flex: 0 0 30%;
+  width: 100%;
+  min-width: 0;
+  margin: 2rem 2rem 2rem 1.5rem;
+  padding: 2rem 1.5rem 2rem 1.5rem;
   box-sizing: border-box;
-  margin: 0 1%;
-  border: 1px solid black;
-  height: 80dvh;
-  overflow-y: auto;
-  flex-wrap: nowrap;
+  border-radius: 16px;
+}
 }
 
-/* Logo do Lucky Roll */
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  section#dice-roller-container,
+  section#roll-log {
+    max-width: 100%;
+    min-width: unset;
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
 #lucky-roll-logo {
-  display: flex;
   width: 10%;
+  display: flex;
   justify-self: center;
+}
+
+section {
+  color: white;
+  background-color: #054129;
+  border: solid 2px white;
+  font-weight: 100;
+}
+
+fieldset {
+  border: none;
+}
+
+.add-dices-button {
+  background-color: #ffd23f;
+  padding: 0.75rem;
+  border: none;
+  box-shadow: none;
+}
+
+/* Botão de rolar dados */
+.roll-dices-button {
+  background-color: #ffd23f;
+  color: #054129;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.roll-dices-button:hover {
+  background-color: #c42021;
+  color: #fff;
+}
+
+/* Títulos */
+h1,
+h2,
+h3 {
+  color: #ffd23f;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Container do histórico de rolagens */
+#roll-log {
+  background-color: #054129;
+  border: solid 2px #ffd23f;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  margin: 2rem 2rem 2rem 1.5rem;
+  width: 100%;
+  min-width: 0;
+  box-shadow: 0 2px 8px rgba(13, 99, 64, 0.2);
+}
+
+#roll-log-header {
+  color: #ffd23f;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+/* Sessão de rolagens */
+.roll-session {
+  background: #0d6340;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ffd23f;
+  box-shadow: 0 1px 4px rgba(13, 99, 64, 0.15);
+}
+
+/* Timestamp da rolagem */
+.roll-timestamp {
+  color: #fff;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+/* Resultado de cada dado */
+.roll-result {
+  background: #054129;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-left: 4px solid #ffd23f;
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  box-shadow: 0 1px 2px rgba(13, 99, 64, 0.1);
+}
+
+/* Labels e selects */
+.dice-construction-label {
+  color: #fff;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+.dice-type-selector {
+  background: #0d6340;
+  color: #fff;
+  border: 1px solid #ffd23f;
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  font-weight: 600;
+}
+.dice-type-selector:focus {
+  outline: 2px solid #ffd23f;
+}
+
+/* Input quantidade */
+.dice-quantity-input {
+  background: #0d6340;
+  color: #fff;
+  border: 1px solid #ffd23f;
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  font-weight: 600;
+  width: 60px;
+}
+.dice-quantity-input:focus {
+  outline: 2px solid #ffd23f;
+}
+
+/* Botão de adicionar dado (hover) */
+.add-dices-button:hover {
+  background-color: #c42021;
+  color: #fff;
+}
+
+/* Mensagem de erro/sucesso */
+.msg-success {
+  color: #ffd23f;
+  background: #054129;
+  border-left: 4px solid #c42021;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }

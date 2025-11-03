@@ -67,7 +67,6 @@ function addDices() {
 function rollDices() {
   let fieldsets = document.querySelectorAll(".dice-information");
 
-  window.alert(fieldsets.length);
   fieldsets.forEach((fieldset, index) => {
     quantidade_de_dados = fieldset.querySelector(".dice-quantity-input").value;
     dado_selecionado = fieldset.querySelector(".dice-type-selector").value;
@@ -109,7 +108,9 @@ function rollDices() {
     // Criação do Elemento de Texto onde nossas Rolagens vão aparecer
     let text_roll = document.createElement("p");
     const resultadoDosDados = singleRolls();
-    text_roll.textContent = `${quantidade_de_dados}D${dado_selecionado} → [${resultadoDosDados.join(
+    text_roll.textContent = `${new Date().toLocaleString(
+      "pt-BR"
+    )}:  ${quantidade_de_dados}D${dado_selecionado} → [${resultadoDosDados.join(
       ", "
     )}]`;
 
