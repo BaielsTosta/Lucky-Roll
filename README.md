@@ -2,6 +2,8 @@
 
 Um rolador de dados virtual para RPG de mesa, desenvolvido com HTML, CSS e JavaScript puro.
 
+![Screenshot](https://github.com/BaielsTosta/Lucky-Roll/blob/main/img/Lucky-Roll-Screenshot.png)
+
 ## Características
 
 - Suporta múltiplos tipos de dados (D2, D4, D6, D8, D10, D12, D20)
